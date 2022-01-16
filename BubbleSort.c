@@ -1,23 +1,37 @@
 #include <stdio.h>
 
-//冒泡排序
+//鍐掓场鎺掑簭
 
 int main(void)
 {
-	int arr[] = { 846, 32, 54, 234, 86, 123, 98768, 263 }; //定义数组
-	int length = sizeof(arr) / sizeof(arr[0]); //获取数组长度
-	//遍历数组进行排序
+	
+	int arr[] = {846, 32, 54, 234, 86, 123, 98768, 263}; //瀹氫箟鏁扮粍
+	int length = sizeof(arr) / sizeof(arr[0]); //鑾峰彇鏁扮粍闀垮害
+	
+	/*
+	//閬嶅巻鏁扮粍杩涜鎺掑簭
 	for (int i = 0; i < length; i++) {
 		for (int j = i + 1; j < length; j++) {
 			if (arr[i] > arr[j]) {
-				int temp = arr[i]; //定义临时变量交换两个变量
+				int temp = arr[i]; //瀹氫箟涓存椂鍙橀噺浜ゆ崲涓や釜鍙橀噺
 				arr[i] = arr[j];
 				arr[j] = temp;
 			}
 		}
 	}
+	*/
 
-	//输出排序后的数组
+	for (int i = 0; i < length; i++) {
+		for (int j = 0; j < length - i - 1; j++) {
+			if (arr[j] > arr[j + 1]) {
+				int temp = arr[j]; //瀹氫箟涓存椂鍙橀噺浜ゆ崲涓や釜鍙橀噺
+				arr[j] = arr[j + 1];
+				arr[j + 1] = temp;
+			}
+		}
+	}
+
+	//杈撳嚭鎺掑簭鍚庣殑鏁扮粍
 	for (int i = 0; i < length; i++) {
 		printf("%d ", arr[i]);
 	}
